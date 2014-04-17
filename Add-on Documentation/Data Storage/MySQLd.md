@@ -1,12 +1,12 @@
 # MySQLd: Dedicated MySQL Add-on
 
 High-availability, dedicated MySQL databases are available for
-mission critical production deployments. The dedicated MySQL Add-on is
-based on [Amazon RDS] and is using master-slave replicated Multi-AZ instances. Read
-slaves or reserved instances are currently not supported via the Add-on but
+mission-critical production deployments. The dedicated MySQL Add-on is
+based on [Amazon RDS] and uses master-slave replicated Multi-AZ instances. Read
+slaves or reserved instances are currently not supported via the Add-on, but
 you can always create a custom RDS instance in the EU region and connect your
-app to that. We recommend using the [Config Add-on] to make the credentials
-of the self managed RDS instance available to your app.
+app to it. We recommend using the [Config Add-on] to make the credentials
+of the self-managed RDS instance available to your app.
 
 ## Features of the cloudControl MySQLd Add-on
 
@@ -31,12 +31,13 @@ The MySQLd Add-on comes with the following features:
     different Availability Zone (independent infrastructure in a physically
     separate location). Database updates are made concurrently on the primary
     and standby resources to prevent replication lag.
+
 4. Dashboard
     - View key operational metrics like CPU/ Memory/ Storage/ Connections for your DB Instance deployments via [Webconsole].
 
 ## Adding the MySQLd Add-on
 
-To add the MySQLd Add-on use the addon.add command.
+To add the MySQLd Add-on use the `addon.add` command:
 
 ~~~
 $ cctrlapp APP_NAME/DEP_NAME addon.add mysqld.OPTION
@@ -98,12 +99,12 @@ general documentation.
 
 ### External Access
 
-External access to the MySQLd Add-on is available through an SSL encrypted connection by following these simple steps.
+External access to the MySQLd Add-on is available through an SSL-encrypted connection by following these simple steps:
 
  1. Download the [certificate file] to your local machine.
  1. Connect to the database using an SSL encrypted connection.
 
-The following example uses the MySQL command line tool.
+The following example uses the MySQL command line tool:
 
 ~~~
 $ mysql -u MYSQLD_USERNAME -p --host=MYSQLD_HOSTNAME --ssl-ca=PATH_TO_CERTIFICATE/mysql-ssl-ca-cert.pem
