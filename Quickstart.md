@@ -122,4 +122,4 @@ To learn more about all the platform features and how to integrate it
 seamlessly into the development life cycle please refer to the extensive
 [platform documentation](https://community.exoscale.ch/apps/documentation/).
 
-[installer]: https://www.cloudcontrol.com/download/win
+[installer]: https://download.cloudcontrolled.com/windows
