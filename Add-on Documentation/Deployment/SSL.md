@@ -155,13 +155,13 @@ in PEM format.
 To add the SSL Add-on, simply provide the paths to the files provided by the
 certificate authority using the respective parameters of the addon.add command.
 
-    $ exoapp APP_NAME/DEP_NAME addon.add ssl.host --cert path/to/CERT_FILE --key path/to/KEY_FILE [--chain path/to/CHAIN_FILE]
+    $ exoapp APP_NAME/DEP_NAME addon.add ssl.free --cert path/to/CERT_FILE --key path/to/KEY_FILE [--chain path/to/CHAIN_FILE]
 
 In order to check the status of the Add-on, you can do the following.
 
-    $ exoapp APP_NAME/DEP_NAME addon ssl.host
+    $ exoapp APP_NAME/DEP_NAME addon ssl.free
 
-    Addon                    : ssl.host
+    Addon                    : ssl.free
     
      Settings
        SSLDEV_CERT_EXPIRES      : 2016-01-01 10:00:00
@@ -171,7 +171,7 @@ In order to check the status of the Add-on, you can do the following.
 If you want to exchange your certificate (e.g. because it is about to expire),
 you can upload the new certificate with the following command:
 
-    $ exoapp APP_NAME/DEP_NAME addon.upgrade ssl.host ssl.host --cert path/to/NEW_CERT_FILE --key path/to/KEY_FILE [--chain path/to/CHAIN_FILE]
+    $ exoapp APP_NAME/DEP_NAME addon.upgrade ssl.free ssl.free --cert path/to/NEW_CERT_FILE --key path/to/KEY_FILE [--chain path/to/CHAIN_FILE]
 
 Note: If the new certificate has the same chain file, you still need to pass it again.
 
