@@ -10,45 +10,25 @@ In this tutorial we're going to show you how to deploy a Jetty application on [e
 First, clone the hello world app from our repository:
 
 ~~~bash
-$ git https://github.com/cloudControl/java-jetty-jsp-example-app.git
-$ cd java-jetty-jsp-example-app
+$ git clone https://github.com/cloudControl/java-jetty-example-app.git
+$ cd java-jetty-example-app
 ~~~
 
 Now you have a small but fully functional Java/Jetty application.
 
 
 ### Dependency Tracking
-To create this application we had to provide Spring framework and Log4j as Maven dependencies in the `pom.xml`.
+To create this application we had to provide Jetty server and Servlet library as Maven dependencies in the `pom.xml`.
 ~~~xml
 <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-core</artifactId>
-    <version>${org.springframework.version}</version>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-servlet</artifactId>
+    <version>7.6.0.v20120127</version>
 </dependency>
 <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-webmvc</artifactId>
-    <version>${org.springframework.version}</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-    <version>${org.springframework.version}</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-beans</artifactId>
-    <version>${org.springframework.version}</version>
-</dependency>
-<dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version>
-</dependency>
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-log4j13</artifactId>
-    <version>1.0.1</version>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
 </dependency>
 ~~~
 
@@ -75,11 +55,11 @@ exoscale uses a [Procfile] to know how to start your processes.
 The example code already includes the `Procfile` at the top level of your repository. It looks like this:
 
 ~~~
-web: java $JAVA_OPTS -jar target/dependency/jetty-runner.jar --port $PORT target/java-jetty-jsp-example-app-0.0.1-SNAPSHOT.war
+    web:  java -cp target/classes:target/dependency/*  com.cloudcontrolled.sample.jetty.App
 ~~~
 
 The `web` process type is required and specifies the command that will be executed when the app is deployed.
-The java command starts the 'com.exo.sample.jetty.App' with the classpath set to the compiled Java classes and dependencies.
+The java command starts the 'com.cloudcontrolled.sample.jetty.App' with the classpath set to the compiled Java classes and dependencies.
 
 ## Pushing and Deploying your App
 Choose a unique name to replace the `APP_NAME` placeholder for your application and create it on the exoscale platform: 
