@@ -129,4 +129,4 @@ To learn more about all the platform features and how to integrate it
 seamlessly into the development life cycle please refer to the extensive
 [platform documentation](https://community.exoscale.ch/apps/documentation/).
 
-[installer]: https://download.cloudcontrolled.com/windows
+[installer]: https://sos.exo.io/windows.app.exo.io/cctrl-1.16.1-setup.exe
