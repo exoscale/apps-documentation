@@ -171,9 +171,11 @@ In order to check the status of the Add-on, you can do the following.
 If you want to exchange your certificate (e.g. because it is about to expire),
 you can upload the new certificate with the following command:
 
-    $ exoapp APP_NAME/DEP_NAME addon.upgrade ssl.free ssl.free --cert path/to/NEW_CERT_FILE --key path/to/KEY_FILE [--chain path/to/CHAIN_FILE]
+    $ exoapp APP_NAME/DEP_NAME addon.remove ssl.free
+    $ exoapp APP_NAME/DEP_NAME addon.add ssl.free --cert path/to/NEW_CERT_FILE --key path/to/KEY_FILE [--chain path/to/CHAIN_FILE]
 
 Note: If the new certificate has the same chain file, you still need to pass it again.
+Make sure to readd the addon immediatly after removing.
 
 ### SNI endpoint
 
